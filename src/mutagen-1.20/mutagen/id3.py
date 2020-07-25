@@ -1474,7 +1474,7 @@ class RVA2(Frame):
 
     Attributes:
     desc -- description or context of this adjustment
-    channel -- audio channel to adjust (master is 1)
+    channel -- audio channel to adjust (main is 1)
     gain -- a + or - dB gain relative to some reference level
     peak -- peak of the audio as a floating point number, [0, 1]
 
@@ -1484,7 +1484,7 @@ class RVA2(Frame):
 
     _framespec = [ Latin1TextSpec('desc'), ChannelSpec('channel'),
         VolumeAdjustmentSpec('gain'), VolumePeakSpec('peak') ]
-    _channels = ["Other", "Master volume", "Front right", "Front left",
+    _channels = ["Other", "Main volume", "Front right", "Front left",
                  "Back right", "Back left", "Front centre", "Back centre",
                  "Subwoofer"]
     HashKey = property(lambda s: '%s:%s' % (s.FrameID, s.desc))

@@ -536,11 +536,11 @@ class Redis(threading.local):
         """
         return self.execute_command('SAVE')
 
-    def slaveof(self, host=None, port=None):
+    def subordinateof(self, host=None, port=None):
         """
-        Set the server to be a replicated slave of the instance identified
+        Set the server to be a replicated subordinate of the instance identified
         by the ``host`` and ``port``. If called without arguements, the
-        instance is promoted to a master instead.
+        instance is promoted to a main instead.
         """
         if host is None and port is None:
             return self.execute_command("SLAVEOF", "NO", "ONE")
